@@ -1573,7 +1573,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -38.7, -10.1, -1.7 }
+#define NOZZLE_TO_PROBE_OFFSET { -38.7, -10.1, -1.50 } // -JH
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -1820,7 +1820,7 @@
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE + 20
+#define X_MAX_POS X_BED_SIZE + 20 // -JH we have space to move the hotend such that the nozzle is well off the bed
 #define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 250
 //#define I_MIN_POS 0
@@ -2056,7 +2056,7 @@
  */
 #define PREHEAT_BEFORE_LEVELING
 #if ENABLED(PREHEAT_BEFORE_LEVELING)
-  #define LEVELING_NOZZLE_TEMP 120   // (°C) Only applies to E0 at this time
+  #define LEVELING_NOZZLE_TEMP  30   // (°C) Only applies to E0 at this time // -JH
   #define LEVELING_BED_TEMP     60
 #endif
 
@@ -2148,8 +2148,8 @@
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 40              // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 9      // Don't use more than 15 points per axis, implementation limited.
+  #define MESH_INSET 30              // Set Mesh bounds as an inset region of the bed -JH
+  #define GRID_MAX_POINTS_X 9      // Don't use more than 15 points per axis, implementation limited. -JH
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   //#define UBL_HILBERT_CURVE       // Use Hilbert distribution for less travel when probing multiple points
